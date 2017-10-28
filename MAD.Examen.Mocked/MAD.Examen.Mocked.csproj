@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.0.0-rc1" />
+    <PackageReference Include="Moq" Version="4.7.142" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MAD.Examen.Models\MAD.Examen.Models.csproj" />
+    <ProjectReference Include="..\MAD.Examen.UnitOfWork\MAD.Examen.UnitOfWork.csproj" />
+  </ItemGroup>
+
+</Project>
