@@ -46,7 +46,7 @@ namespace MAD.Examen.WebApiTests
 
             var person = new Person
             {
-                PersonID = -100,
+                PersonID = 101,
                 FirstName = "Manuel",
                 LastName = "Angeles",
                 HireDate = DateTime.Now
@@ -62,7 +62,41 @@ namespace MAD.Examen.WebApiTests
 
         }
 
-        
+
+
+
+        [Fact(DisplayName = "[PersonController] Update")]
+        public void Update_Person_Test()
+        {
+            var person = new Person
+            {
+                PersonID = 101,
+                FirstName = "Manuel",
+                LastName = "Angeles",
+                HireDate = DateTime.Now
+            };
+
+
+            var result = _personController.Put(person) as OkObjectResult;
+
+
+            result.Should().NotBeNull();
+            result.Value.Should().NotBeNull();
+
+
+            var model = result.Value?.GetType().GetProperty("Message").GetValue(result.Value);
+
+            model.Should().Be("The person is updated");
+
+            var currentPerson = _unitMocked.Persons.GetById(101);
+            currentPerson.Should().NotBeNull();
+            currentPerson.PersonID.Should().Be(person.PersonID);         
+            currentPerson.FirstName.Should().Be(person.FirstName);
+            currentPerson.LastName.Should().Be(person.LastName);
+            currentPerson.HireDate.Should().Be(person.HireDate);
+
+
+        }
 
 
         [Fact(DisplayName = "[PersonController] Update Error")]
