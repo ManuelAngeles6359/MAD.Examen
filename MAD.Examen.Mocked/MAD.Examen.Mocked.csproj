@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MAD.Examen.Models\MAD.Examen.Models.csproj" />
+    <ProjectReference Include="..\MAD.Examen.Repositories.Dapper\MAD.Examen.Repositories.Dapper.csproj" />
     <ProjectReference Include="..\MAD.Examen.UnitOfWork\MAD.Examen.UnitOfWork.csproj" />
   </ItemGroup>
 

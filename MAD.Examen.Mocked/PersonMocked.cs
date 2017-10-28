@@ -8,14 +8,12 @@ using System.Linq;
 
 namespace MAD.Examen.Mocked
 {
-    public class UnitOfWorkMocked
+    public class PersonMocked
     {
-
-
-
+                
         private List<Person> _persons;
 
-        public UnitOfWorkMocked()
+        public PersonMocked()
         {
             _persons = Persons();
         }

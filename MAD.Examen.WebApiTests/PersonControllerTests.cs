@@ -18,7 +18,7 @@ namespace MAD.Examen.WebApiTests
 
         public PersonControllerTests()
         {
-            var unitMocked = new UnitOfWorkMocked();
+            var unitMocked = new PersonMocked();
             _unitMocked = unitMocked.GetInstance();
             _personController = new PersonController(_unitMocked);
 
