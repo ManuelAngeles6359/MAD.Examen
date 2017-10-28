@@ -155,7 +155,7 @@ namespace MAD.Examen.WebApiTests
 
 
         [Fact(DisplayName = "[PersonController] Get By Id")]
-        public void GetById_Csutomer_Test()
+        public void GetById_Person_Test()
         {
 
             var result = _personController.GetById(1) as OkObjectResult;
